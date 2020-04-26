@@ -4,17 +4,21 @@ import { EmployeeContext } from './EmployeeContext.js';
 import Btn from "./Btn.js"
 import "./ResultList.css"
 
+
 function Table() {
 
     const [url] = useState("https://randomuser.me/api/?results=10")
     // custom hook used for getting the employees from the api and storing the sort functions
     const { sortFunc } = useGet(url);
+   
     // contains the employees to display in the table
     const { displayedEmployees} = useContext(EmployeeContext)
 
     return (
+        
 
         <table className="table">
+           
             <thead>
                 <tr className="table-head">
                     <td onClick={() => sortFunc("firstname")}><Btn>First Name</Btn></td>
